@@ -1,0 +1,57 @@
+LISTA AUTO-USATE
+
+NOME DATO					TIPO DI DATO				ATTRIBUTI		DEFAULT VALUE
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+% CODICE IDENTIFICATIVO INTERNO
+id						MEDIUMINT				PRIMARY KEY		-
+
+% MARCA E MODELLO
+marca						VARCHAR(20)				NOT NULL, INDEX		-
+modello						VARCHAR(20)				NOT NULL, INDEX		-
+versione_modello				VARCHAR(20)				NULL			-
+
+% IMMATRICOLAZIONE E REVISIONE
+targa						CHAR(7)					NOT NULL, UNIQUE	-
+prima_immatricolazione				DATE					NOT NULL		-
+ultima_revisione				DATE					NOT NULL		-
+esito_revisione (positivo, negativo)		TINYINT					NULL			1 (POSITIVO)
+
+% DATI BASE AUTO
+tipologia_auto (utilitaria, berlina, ...)	VARCHAR(20)				NULL			-
+chilometri_percorsi [km*1000]			SMALLINT				NOT NULL, INDEX		-
+cambio (automatico, manuale, ...)		VARCHAR(20)				NULL			-
+valutazione [€*1000]				DECIMAL(4,1) -> max 999.999 €		NULL, INDEX		-
+descrizione					TEXT					NULL			-
+
+% CARATTERISTICHE TECNICHE
+tipo_veicolo (autovettura, ...)			VARCHAR(20)				NULL			"autovettura"
+numero_porte					TINYINT					NULL			-
+numero_posti					TINYINT					NULL			-
+combusibile (benzina, diesel, ...)		VARCHAR(20)				NULL			-
+emissioni (euro0, euro1, ...)			CHAR(2)					NOT NULL		-
+numero_telaio (vin)				CHAR(17)				NULL			-
+massa [kg]					SMALLINT				NULL			-
+potenza [kW]					SMALLINT				NULL			-
+cilindrata [cm3]				SMALLINT				NULL			-
+
+% CONDIZIONI
+colore_carrozzeria				VARCHAR(20)				NOT NULL		-
+metallizzato (si, no)				TINYINT					NULL			0 (NO)
+condizione_carrozzeria				VARCHAR(20)				NULL			-
+colore_interni					VARCHAR(20)				NULL			-
+condizione_interni				VARCHAR(20)				NULL			-
+foto (path a cartella)				VARCHAR(40)				NULL			-
+
+% ACCESSORI E OPTIONAL
+climatizzatore (si, no)				TINYINT					NULL			-
+radio (si, no)					TINYINT					NULL			-
+navigatore (si, no)				TINYINT					NULL			-
+bluetooth (si, no)				TINYINT					NULL			-
+...
+
+% ALTRO
+numero_proprietari_precedenti			TINYINT					NULL			-
+note						TEXT					NULL			-
+
+
+
