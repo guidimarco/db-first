@@ -3,7 +3,7 @@ LISTA AUTO-USATE
 NOME DATO					TIPO DI DATO				ATTRIBUTI		DEFAULT VALUE
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 % CODICE IDENTIFICATIVO INTERNO
-id						MEDIUMINT				PRIMARY KEY		-
+id						MEDIUMINT				PRIMARY KEY, AUTO_INCREMENT
 
 % MARCA E MODELLO
 marca						VARCHAR(20)				NOT NULL, INDEX		-
@@ -20,7 +20,7 @@ esito_revisione (positivo, negativo)		TINYINT					NULL			1 (POSITIVO)
 tipologia_auto (utilitaria, berlina, ...)	VARCHAR(20)				NULL			-
 chilometri_percorsi [km*1000]			SMALLINT				NOT NULL, INDEX		-
 cambio (automatico, manuale, ...)		VARCHAR(20)				NULL			-
-valutazione [€*1000]				DECIMAL(4,1) -> max 999.999 €		NULL, INDEX		-
+valutazione [€*1000]				DECIMAL(4,1) -> max 999.900 €		NULL, INDEX		-
 descrizione					TEXT					NULL			-
 
 % CARATTERISTICHE TECNICHE
