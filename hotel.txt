@@ -1,0 +1,38 @@
+HOTEL
+
+NOME DATO					TIPO DI DATO				ATTRIBUTI		DEFAULT VALUE
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+% STANZA
+id_stanza					SMALLINT				PRIMARY KEY, AUTO_INCREMENT
+num_stanza					VARCHAR(20)				NOT NULL, INDEX, UNIQUE
+note						TEXT					NULL			-
+
+% TIPOLOGIA
+id_tipologia					TINYINT					PRIMARY KEY, AUTO_INCREMENT
+nome_tipologia					VARCHAR(20)				NOT NULL, INDEX		-
+tariffa						DECIMAL(5,2) -> max 999,99 €		NOT NULL		-
+
+% CAR_STANZA
+id_caratteristica				SMALLINT				PRIMARY KEY, AUTO_INCREMENT
+wifi						TINYINT (1 SI, 0 NO)			NULL			DEFAULT(1)
+fumatori					TINYINT (1 SI, 0 NO)			NULL			DEFAULT(1)
+terrazzo					TINYINT (1 SI, 0 NO)			NULL			DEFAULT(0)
+frigo_bar					TINYINT (1 SI, 0 NO)			NULL			DEFAULT(1)
+num_bagni					TINYINT					NULL			-
+
+% LOCALIZZAZIONE
+id_localizzazione				SMALLINT				PRIMARY KEY, AUTO_INCREMENT
+piano						TINYINT					NOT NULL		-
+settore						VARCHAR(20)				NOT NULL		-
+
+% PRENOTAZIONI
+id_prenotazione					BIGINT					PRIMARY KEY, AUTO_INCREMENT
+check_in					DATE					NOT NULL		-
+check_out					DATE					NOT NULL		-
+
+% ANAGRAFICA OSPITI
+id_ospite					BIGINT					PRIMARY KEY, AUTO_INCREMENT
+nome						VARCHAR(20)				NOT NULL		-
+cognome						VARCHAR(20)				NOT NULL		-
+mail						VARCHAR(20)				NOT NULL		-
+data_nascita					DATE					NOT NULL		-
